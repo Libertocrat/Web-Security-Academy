@@ -1,4 +1,6 @@
-# Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
+# Lab 1: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
+
+**Status**: Solved the 1st August 2023.
 
 **Objective**: display all products, released and unreleased.
 
