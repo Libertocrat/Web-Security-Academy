@@ -1,4 +1,4 @@
-# Lab 9 - **SQL injection attack, listing the database contents on non-Oracle databases**
+# Lab 9 - SQL injection attack, listing the database contents on non-Oracle databases
 
 **Status**: Solved on August 2, 2023
 
@@ -14,7 +14,7 @@
 - After checking the outputted table names, the following may hold users’ information:
   - `pg_user`
   - `users_aifmth`
-- The column names for those tables were outputted by using the following payload (built with the help of the [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet): 
+- The column names for those tables were outputted by using the following payload (built with the help of the [SQL injection cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet):
   - `' UNION SELECT column_name,NULL FROM information_schema.columns where table_name = 'users_aifmth' --`
   - The table that holds the most interesting column names is `users_aifmth`, which are: `username_wopbqk` and `password_youquw`
 - Finally, the users & their passwords where gathered by quering the `users_aifmth` table with this payload: `' UNION SELECT username_wopbqk,password_youquw FROM users_aifmth --`
